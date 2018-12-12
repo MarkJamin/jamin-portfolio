@@ -11,5 +11,8 @@
     "url": "https://github.com/MarkJamin"
   },
   "author": "Mark Jamin",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.1"
+  }
 }
