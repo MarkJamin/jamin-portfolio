@@ -1,31 +1,36 @@
 @import 'config';
+@import 'bg';
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: $primary-color;
   width: 100%;
-  border: solid #7F88A2 15px;
-  padding: 100px;
+ /* border: solid #7F88A2 10px; */
   height: 100vh;
   margin: 0;
-  width: 100%;
+  padding: 0;
 }
 
+/*
 #bg-img {
   @include background;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: -1;
 }
+*/
 
 
-
-#home {
+header {
   position: absolute;
   top: 120px;
   right: 130px;
   text-align: left;
   line-height: 5.5rem;
+  z-index: 1;
 }
 
 //Headings
@@ -57,10 +62,40 @@ h3 {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   6px 2px 0 #000;
+  
+  
+  &::after {
+    content: '';
+    display: block;
+    background: rgba(255, 255, 0, 0.8);
+    height: 16px;
+    width: 105%;
+    position: relative;
+    top: -10px;
+    left: -6px;
+    z-index: -1;
+    transform: skew(330deg);
+  }
+}
+
+.ease-in {
+  animation: easeIn 1s forwards 0s ease-in;
+}
+
+@keyframes easeIn {
+  0% {
+    transform: rotate(0) translateY(-15%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0), translateY(0);
+    opacity: 1;
+  }
 }
 
 .header-third {
-  color: $third-color;
+  color: $secondary-color;
   font-size: 3.0rem;
   font-family: 'Alegreya Sans SC',
   sans-serif;
@@ -71,22 +106,82 @@ h3 {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   5px 2px 0 #000;
+
+  animation: slideIn .7s forwards .8s ease;
+  opacity: 0;
+
+  span {
+    display: block;
+  }
+
   
 }
 
-.based {
-  position: absolute;
-  bottom: 109px;
-  right: 120px;
-  font-family: 'Muli',
-  sans-serif;
+@keyframes slideIn {
+  0%{
+    transform: rotate(0) translateX(-30px);
+    opacity: 0;
+  }
+  76%{
+    transform: (0) translateX(10px);
+    opacity: .76;
+  }
+  100%{
+    transform: rotate(0) translateX(0);
+    opacity: 1;
+  }
 }
 
 
-.contact, a {
-  padding-left: 25px;
+.contact 
+a {
+  padding: 25px;
   text-decoration: none;
   letter-spacing: 5px;
-  color: #7F88A2;
-  font-size: 2.0rem;
+  color: $primary-color;
+  font-size: 2rem;
+  text-shadow: 2px -1px rgb(0, 0, 0),
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  2px 1px 0 #000;
+  animation: easeInto 1s forwards 0s ease;
+
+  &:hover, 
+  :link {
+  color: rgb(62, 184, 38);
+  }
 }
+
+@keyframes easeInto {
+  0% {
+    transform: rotate(-30deg) translateY(-1%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0), translateY(0);
+    opacity: 1;
+  }
+}
+
+footer {
+  font-family: 'Muli';
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  &:hover,
+   :link {
+      color: $primary-color;
+    }
+  }
+}
+
+
+
+@import 'mobile';

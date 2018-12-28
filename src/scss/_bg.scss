@@ -1,0 +1,37 @@
+div.background:before,
+div.background:after {
+  border-top: 100vh solid rgba(0, 0, 0, 0);
+  content: '';
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+}
+
+div.background:before {
+  border-left: 100vh solid #ffffff;
+  left: 0;
+}
+
+.background {
+  animation: bg 20s linear infinite;
+  background-image: linear-gradient(90deg,
+    #0072ff,
+    #ff0058);
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+div.background:after {
+  border-right: 100vh solid #ffffff;
+  right: 0;
+}
+
+@keyframes bg {
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
