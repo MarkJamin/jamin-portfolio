@@ -6,7 +6,7 @@
   position: absolute;
   z-index: 3;
   top: 35px;
-  right: 35px;
+  left: 35px;
   cursor: pointer;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
@@ -66,6 +66,100 @@
   100% {
     background-color: #ffffff;
   }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.menu.show {
+  visibility: visible;
+}
+
+.menu-nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  float: left;
+  width: 60%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: rgba(188, 39, 12, 0.9);
+  -webkit-clip-path: polygon(0 0, 29% 0, 51% 100%, 0% 100%);
+  clip-path: polygon(0 0, 29% 0, 51% 100%, 0% 100%);
+  -webkit-transform: translate3d(-600px, 0, 0);
+          transform: translate3d(-600px, 0, 0);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.menu-nav.show {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.menu-nav .nav-item {
+  -webkit-transform: translate3d(-600px, 0, 0);
+          transform: translate3d(-600px, 0, 0);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.menu-nav .nav-item.show {
+  -webkit-transform: translate3d(50px, 0, 0);
+          transform: translate3d(50px, 0, 0);
+}
+
+.menu-nav .nav-item.current > a {
+  color: #000000;
+}
+
+.menu-nav .nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  position: relative;
+  top: 200px;
+  font-size: 1.5625rem;
+  text-transform: uppercase;
+  padding: 2rem;
+  font-weight: 600;
+  color: #ffd000;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.menu-nav .nav-link:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.nav-item:nth-child(1) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 div.background:before,
@@ -306,6 +400,7 @@ a :link {
 }
 
 footer {
+  z-index: 1;
   font-family: 'Muli';
   position: absolute;
   text-align: center;
