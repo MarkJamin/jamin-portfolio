@@ -1,7 +1,7 @@
 // Tablets & Small Laptops
 @include mediaMd {
 
-  header {
+  #home {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -12,14 +12,14 @@
 
     .header-primary {
       font-size: 5.5rem;
-      letter-spacing: -10px;
-      line-height: 3rem;
+      letter-spacing: -7px;
+      line-height: 3.6rem;
     }
     .header-secondary {
-      font-size: 5.5rem;
+      font-size: 6.5rem;
       &::after {
        position: relative;
-       top: -25px;
+       top: -19px;
       }
     }
     .header-third {
@@ -27,6 +27,10 @@
       font-size: 2.6rem;
       text-align: center;
       padding-top: 0;
+
+      span {
+        display: block;
+      }
     }
     .contact {
       padding-top: 0;

@@ -1,6 +1,73 @@
 /* COLORS */
 /* FONTS */
 @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900i|Julius+Sans+One|Muli:600i");
+/* MOBILE */
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.menu-btn .btn-line {
+  background-color: #F0ECE4;
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.menu-btn.close {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu-btn.close .btn-line:nth-child(1) {
+  -webkit-animation: closeBlink 5s infinite;
+          animation: closeBlink 5s infinite;
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+          transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.close .btn-line:nth-child(3) {
+  -webkit-animation: closeBlink 5s infinite;
+          animation: closeBlink 5s infinite;
+  -webkit-transform: rotate(-45deg) translate(7px, -6px);
+          transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@-webkit-keyframes closeBlink {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #000000;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+@keyframes closeBlink {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #000000;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+
 div.background:before,
 div.background:after {
   border-top: 100vh solid rgba(0, 0, 0, 0);
@@ -26,6 +93,7 @@ div.background:before {
   height: 100vh;
   left: 0;
   top: 0;
+  z-index: -1;
 }
 
 div.background:after {
@@ -53,9 +121,6 @@ div.background:after {
 }
 
 body {
-  width: 100%;
-  /* border: solid #7F88A2 10px; */
-  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -69,12 +134,12 @@ body {
   z-index: -1;
 }
 */
-header {
+#home {
   position: absolute;
   top: 120px;
   right: 130px;
   text-align: left;
-  line-height: 5.5rem;
+  line-height: 5.6rem;
   z-index: 1;
 }
 
@@ -85,6 +150,7 @@ h3 {
 }
 
 .header-primary {
+  padding-left: 10px;
   color: #F0ECE4;
   font-size: 7rem;
   font-family: 'Julius Sans One', sans-serif;
@@ -96,7 +162,7 @@ h3 {
   color: #F0ECE4;
   font-size: 7.5rem;
   font-family: 'Julius Sans One', sans-serif;
-  letter-spacing: -10px;
+  letter-spacing: -14px;
   text-shadow: 7px -1px #000, 1px -1px 0 #000, -1px 1px 0 #000, 6px 2px 0 #000;
 }
 
@@ -147,19 +213,15 @@ h3 {
 
 .header-third {
   color: #ff7300;
-  font-size: 3.0rem;
+  font-size: 2.5rem;
   font-family: 'Alegreya Sans SC', sans-serif;
   padding-top: 50px;
   line-height: 40px;
   text-align: left;
   text-shadow: 4px -1px #000, 1px -1px 0 #000, -1px 1px 0 #000, 5px 2px 0 #000;
-  -webkit-animation: slideIn .7s forwards .8s ease;
-          animation: slideIn .7s forwards .8s ease;
+  -webkit-animation: slideIn 2s forwards .8s ease;
+          animation: slideIn 2s forwards .8s ease;
   opacity: 0;
-}
-
-.header-third span {
-  display: block;
 }
 
 @-webkit-keyframes slideIn {
@@ -206,8 +268,8 @@ a {
   color: #F0ECE4;
   font-size: 2rem;
   text-shadow: 2px -1px black, 1px -1px 0 #000, -1px 1px 0 #000, 2px 1px 0 #000;
-  -webkit-animation: easeInto 1s forwards 0s ease;
-          animation: easeInto 1s forwards 0s ease;
+  -webkit-animation: easeInto 2s forwards 0s ease;
+          animation: easeInto 2s forwards 0s ease;
 }
 
 .contact
@@ -259,11 +321,11 @@ footer a {
 
 footer a:hover,
 footer a :link {
-  color: #F0ECE4;
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
-  header {
+  #home {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -272,25 +334,28 @@ footer a :link {
     top: 160px;
     right: 210px;
   }
-  header .header-primary {
+  #home .header-primary {
     font-size: 5.5rem;
-    letter-spacing: -10px;
-    line-height: 3rem;
+    letter-spacing: -7px;
+    line-height: 3.6rem;
   }
-  header .header-secondary {
-    font-size: 5.5rem;
+  #home .header-secondary {
+    font-size: 6.5rem;
   }
-  header .header-secondary::after {
+  #home .header-secondary::after {
     position: relative;
-    top: -25px;
+    top: -19px;
   }
-  header .header-third {
+  #home .header-third {
     display: inline-block;
     font-size: 2.6rem;
     text-align: center;
     padding-top: 0;
   }
-  header .contact {
+  #home .header-third span {
+    display: block;
+  }
+  #home .contact {
     padding-top: 0;
   }
 }

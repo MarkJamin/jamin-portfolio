@@ -1,14 +1,14 @@
 @import 'config';
+@import 'menu';
 @import 'bg';
+
+
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  width: 100%;
- /* border: solid #7F88A2 10px; */
-  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -24,12 +24,12 @@ body {
 */
 
 
-header {
+#home {
   position: absolute;
   top: 120px;
   right: 130px;
   text-align: left;
-  line-height: 5.5rem;
+  line-height: 5.6rem;
   z-index: 1;
 }
 
@@ -41,6 +41,7 @@ h3 {
 }
 
 .header-primary {
+  padding-left: 10px;
   color: $primary-color;
   font-size: 7rem;
   font-family: 'Julius Sans One',
@@ -57,7 +58,7 @@ h3 {
   font-size: 7.5rem;
   font-family: 'Julius Sans One',
   sans-serif;
-  letter-spacing: -10px;
+  letter-spacing: -14px;
   text-shadow: 7px -1px #000,
   1px -1px 0 #000,
   -1px 1px 0 #000,
@@ -96,7 +97,7 @@ h3 {
 
 .header-third {
   color: $secondary-color;
-  font-size: 3.0rem;
+  font-size: 2.5rem;
   font-family: 'Alegreya Sans SC',
   sans-serif;
   padding-top: 50px;
@@ -107,12 +108,8 @@ h3 {
   -1px 1px 0 #000,
   5px 2px 0 #000;
 
-  animation: slideIn .7s forwards .8s ease;
+  animation: slideIn 2s forwards .8s ease;
   opacity: 0;
-
-  span {
-    display: block;
-  }
 
   
 }
@@ -144,7 +141,7 @@ a {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   2px 1px 0 #000;
-  animation: easeInto 1s forwards 0s ease;
+  animation: easeInto 2s forwards 0s ease;
 
   &:hover, 
   :link {
@@ -177,11 +174,9 @@ footer {
     color: #000;
   &:hover,
    :link {
-      color: $primary-color;
+      color: rgb(255, 255, 255);
     }
   }
 }
-
-
 
 @import 'mobile';
