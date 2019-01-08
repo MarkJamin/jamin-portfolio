@@ -15,41 +15,45 @@
     @include easeOut;
   }
 
-    // Rotate Into X With Menu Lines
-    &.close {
-      transform: rotate(180deg);
+  // Rotate Into X With Menu Lines
+  &.close {
+    transform: rotate(180deg);
 
-      .btn-line {
-        // Line 1 - Rotate
-        &:nth-child(1) {
-          animation: closeBlink 5s infinite;
-          transform: rotate(45deg) translate(5px, 5px);
+    .btn-line {
+
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        animation: closeBlink 5s infinite;
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        animation: closeBlink 5s infinite;
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      @keyframes closeBlink {
+        0% {
+          background-color: #ffffff;
         }
 
-        // Line 2 - Hide
-        &:nth-child(2) {
-          opacity: 0;
+        50% {
+          background-color: #000000;
         }
-        // Line 3 - Rotate
-          &:nth-child(3) {
-          animation: closeBlink 5s infinite;
-          transform: rotate(-45deg) translate(7px, -6px);
-          }
 
-          @keyframes closeBlink {
-            0% {
-              background-color: #ffffff;
-            }
-            50% {
-              background-color: #000000;
-            }
-            100% {
-              background-color: #ffffff;
-            }
-          }
+        100% {
+          background-color: #ffffff;
+        }
       }
     }
   }
+}
 
 // Menu Overlay
 .menu {
@@ -58,12 +62,12 @@
   width: 100%;
   visibility: hidden;
   z-index: 1;
-  
+
   &.show {
     visibility: visible;
   }
 
-  
+
   &-nav {
     align-items: center;
     justify-content: center;
@@ -73,55 +77,57 @@
     overflow: hidden;
   }
 
-    &-nav {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      background: rgba(darken(#d42c0e, 5), 0.9);
-      -webkit-clip-path: polygon(0 0, 29% 0, 51% 100%, 0% 100%);
-      clip-path: polygon(0 0, 29% 0, 51% 100%, 0% 100%);
+  &-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: rgba(darken(#d42c0e, 5), 0.9);
+    -webkit-clip-path: polygon(0 0, 29% 0, 51% 100%, 0% 100%);
+    clip-path: polygon(0 0, 29% 0, 51% 100%, 0% 100%);
+    transform: translate3d(-600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      //Slide in from top
+      transform: translate3d(0, 0, 0);
+    }
+
+    .nav-item {
       transform: translate3d(-600px, 0, 0);
       @include easeOut;
 
       &.show {
-        //Slide in from top
-        transform: translate3d(0, 0, 0);
+        // Slide in from right
+        transform: translate3d(50px, 0, 0);
       }
 
-        .nav-item {
-          transform: translate3d(-600px, 0, 0);
-          @include easeOut;
-
-          &.show {
-            // Slide in from right
-            transform: translate3d(50px, 0, 0);
-          }
-
-          &.current>a {
-            color: #000000;
-          }
-        }
-
-        .nav-link {
-          font-family: Arial, Helvetica, sans-serif;
-          display: block;
-          position: relative;
-          top: 200px;
-          font-size: 1.5625rem;
-          text-transform: uppercase;
-          padding: 2rem;
-          font-weight: 600;
-          color: rgb(255, 208, 0);
-          text-decoration: none;
-          @include easeOut;
-
-          &:hover {
-            color: #ffffff;
-            cursor: pointer;
-          }
-        }
+      &.current>a {
+        color: #000000;
       }
     }
+
+    .nav-link {
+      font-family: Arial, Helvetica, sans-serif;
+      display: block;
+      position: relative;
+      top: 300px;
+      left: 50px;
+      font-size: 1.5625rem;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      font-weight: 600;
+      color: rgb(255, 208, 0);
+      text-decoration: none;
+      @include easeOut;
+
+      &:hover {
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 3 {
   .nav-item:nth-child(#{$x}) {

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,AAAC,CACH,OAAO,CAAE,QAAQ,CACjB,OAAO,CAAE,IAAI,CACb,kBAAkB,CAAE,KAAK,CAAC,wBAAwB,CAAC,KAAK,CACxD,kBAAkB,CAAE,kBAAkB,CACtC,QAAQ,CAAE,GAAG,CACb,eAAe,CAAE,MAAM,CACvB,MAAM,CAAE,KAAK,CACd,AAED,AAAA,IAAI,AAAC,CACH,aAAa,CAAE,GAAG,CAClB,OAAO,CAAE,GAAG,CACb",
+    "sources": [
+        "../../src/scss/project_bg.scss"
+    ],
+    "names": [],
+    "file": "project_bg.min.css"
+}
