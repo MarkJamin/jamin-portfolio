@@ -28,7 +28,7 @@
 
     .nav-link {
       top: 150px;
-      right: -280px;
+      left: 280px;
     }
   }
 }
@@ -88,11 +88,12 @@
 
     .nav-link {
       top: 150px;
-      right: -250px;
+      left: 250px;
     }
   }
 }
 
+// Big Screen Phones
 
 @include mediaSmL {
 
@@ -117,9 +118,9 @@
       &::after {
         position: relative;
         top: -13px;
-        left: 92px;
+        left: 49px;
         height: 16px;
-        width: 57%;
+        width: 70%;
       }
     }
 
@@ -148,7 +149,7 @@
 
     .nav-link {
       top: 150px;
-      right: -10px;
+      left: 80px;
     }
   }
   body.background:before {
@@ -157,6 +158,7 @@
   }
 }
 
+// Normal sized cell phones
 
 @include mediaSm {
 
@@ -214,7 +216,7 @@
 
     .nav-link {
       top: 150px;
-      right: -10px;
+      left: 50px;
     }
   }
   body.background:before {
