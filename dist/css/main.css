@@ -230,7 +230,7 @@ body.background:after {
 }
 
 /*    Hero Header    */
-#header_hero {
+#parallax_one {
   opacity: 0.9;
   z-index: -1;
   background: url("/img/ball.jpg") no-repeat fixed center/cover;
@@ -238,7 +238,7 @@ body.background:after {
   width: 100%;
 }
 
-#header_hero h1.hero-header {
+#parallax_one h1.hero-header {
   text-align: center;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
@@ -248,7 +248,7 @@ body.background:after {
   letter-spacing: 1.5rem;
 }
 
-#header_hero h1.hero-header.hero-header {
+#parallax_one h1.hero-header.hero-header {
   position: relative;
   left: 0;
   top: 50%;
@@ -266,21 +266,21 @@ body.background:after {
 
 #parallax_two {
   opacity: 0.9;
-  background: url(/img/ball2.jpg) no-repeat fixed center center/cover;
+  background: url("/img/ball2.jpg") no-repeat fixed center center/cover;
   height: 250px;
   width: 100%;
 }
 
 #parallax_three {
   opacity: 0.9;
-  background: url(/img/ball3.jpg) no-repeat fixed center/cover;
+  background: url("/img/ball3.jpg") no-repeat fixed center/cover;
   height: 250px;
   width: 100%;
 }
 
 #parallax_four {
   opacity: 0.9;
-  background: url(/img/ball4.jpg) no-repeat fixed center/cover;
+  background: url("/img/ball4.jpg") no-repeat fixed center/cover;
   height: 250px;
   width: 100%;
 }
@@ -353,13 +353,13 @@ article h3 {
 
 #content-2 {
   background: #CE5937;
-  padding: 54px 54px;
+  padding: 60px;
   display: block;
 }
 
 #content-3 {
   background: #A34CC6;
-  padding: 54px 54px;
+  padding: 60px;
   display: block;
 }
 
@@ -625,7 +625,7 @@ h3 {
   color: #0072ff;
 }
 
-@media screen and (min-width: 769px) and (max-width: 990px) {
+@media screen and (min-width: 769px) and (max-width: 1180px) {
   .background {
     overflow: hidden;
   }
@@ -647,6 +647,41 @@ h3 {
   .menu .nav-link {
     top: 150px;
     left: 280px;
+  }
+  /* ~~~~~~~~~~~ PROJECTS PAGE ~~~~~~~~~~~~~~~ */
+  .project-bg {
+    overflow: hidden;
+  }
+  #parallax_one,
+  #parallax_two,
+  #parallax_three,
+  #parallax_four {
+    background-attachment: scroll;
+    overflow: hidden;
+    height: 40vh;
+  }
+  #parallax_one h1.hero-header {
+    font-size: 1.75rem;
+  }
+  .content-header {
+    font-size: 1.5rem;
+  }
+  .columns {
+    float: none;
+    width: 100%;
+  }
+  .columns img {
+    width: auto;
+    height: 325px;
+    overflow-y: hidden;
+  }
+  article h3 {
+    padding: 1rem;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  .parallax-header {
+    font-size: 1.10rem;
   }
 }
 
@@ -693,6 +728,37 @@ h3 {
   .menu .nav-link {
     top: 150px;
     left: 250px;
+  }
+  /* ~~~~~~~~~~~ PROJECTS PAGE ~~~~~~~~~~~~~~~ */
+  #parallax_one,
+  #parallax_two,
+  #parallax_three,
+  #parallax_four {
+    background-attachment: scroll;
+    height: 40vh;
+  }
+  #parallax_one h1.hero-header {
+    font-size: 1.5rem;
+  }
+  .content-header {
+    font-size: 1.25rem;
+  }
+  .columns {
+    float: none;
+    width: 100%;
+  }
+  .columns img {
+    width: auto;
+    height: 220px;
+    overflow-y: hidden;
+  }
+  article h3 {
+    padding: 1rem;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  .parallax-header {
+    font-size: 1.10rem;
   }
 }
 
@@ -746,6 +812,7 @@ h3 {
     border: 0;
     left: 0;
   }
+  /* ~~~~~~~~~~~ PROJECTS PAGE ~~~~~~~~~~~~~~~ */
 }
 
 @media screen and (max-width: 375px) {
